@@ -14,14 +14,16 @@ function LunchCheckController ($scope){
         $scope.numOfFood = totalFood;     
     };
     
-    function foodCount (str){
-        var totalFood = 0;
+    function foodCount(str){
+        var count = 0;
+        var str = totalFood.split(',');
         for (var i = 0; i < str.length; i++) {
-          totalFood += str.charCodeAt(i);
+          if (textSplit[i] != ""){
+              count ++;
+          }
         }
-        return totalFood;
+        return count = totalFood;
     }
-    
 }
     
 })();
