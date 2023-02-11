@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" ng-app='LunchCheck'>
+<html lang="en" ng-app="LunchCheck">
   <head>
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
@@ -13,14 +13,17 @@
 <body>
    <div class="container">
      <h1>Lunch Checker</h1>
-
-         <div ng-controller = 'LunchCheckController'>
+         <br>
+         <div class="form-group" ng-controller = "LunchCheckController">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
+             class="form-control" ng-model="foodList" 
+             ng-keyup="displayNumOfFood();">
          </div>
+         <div>Number of food: {{numOfFood}}</div>
          <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
+            <br>
+             <button class="btn btn-default" ng-click="checkFood();">Check If Too Much</button>
          </div>
          <div class="form-group message">
            <!-- Your message can go here. -->
