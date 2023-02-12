@@ -11,7 +11,16 @@ function LunchCheckController ($scope){
     
     $scope.checkFood = function () {
         var totalFood = foodCount($scope.foodList);
-        $scope.numOfFood = totalFood;               
+        $scope.numOfFood = totalFood;
+        if (totalFood == 0){
+            return "Please enter your data first.";
+        }
+        if (totalFood <=3){
+            return "Enjoy!";
+        }
+        else {
+            return "Too much!";
+        }
     };
     
     function foodCount(str){
