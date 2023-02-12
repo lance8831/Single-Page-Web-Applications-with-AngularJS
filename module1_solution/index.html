@@ -20,10 +20,10 @@
              class="form-control" ng-model="foodList" 
              ng-keyup="displayNumOfFood();">
          </div>
-         <div>Number of food: {{numOfFood}}</div>
          <div class="form-group">
             <br>
              <button class="btn btn-default" ng-click="checkFood();">Check If Too Much</button>
+             <div>{{checkFood()}}</div>
          </div>
          <div class="form-group message">
            <!-- Your message can go here. -->
